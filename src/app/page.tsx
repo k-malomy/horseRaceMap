@@ -1,26 +1,26 @@
 import RaceCard from '@/ui/race-card';
+import EmptyRaceCard from '@/ui/empty-race-card';
+import { races, alignedRaces } from '@/lib/load';
 
 export default function Home() {
   return (
-    <div className="space-y-4 p-4">
-      <div className="flex flex-nowrap space-x-4">
-        <RaceCard />
-        <div className="racecard shrink-0"></div>
-        <RaceCard />
-        <div className="racecard shrink-0"></div>
-        <RaceCard />
-        <RaceCard />
-        <div className="racecard shrink-0"></div>
-        <RaceCard />
-        <div className="racecard shrink-0"></div>
-        <RaceCard />
-      </div>
-      <div className="flex flex-nowrap space-x-4">
-        <RaceCard></RaceCard>
-        <RaceCard></RaceCard>
-        <RaceCard></RaceCard>
-        <RaceCard></RaceCard>
-      </div>
-    </div>
-  );
+    races.categories.map((category) => {
+      return (
+        <div key={ category.name } className="p-5 grid grid-rows-7 grid-flow-col gap-4">
+          {
+            alignedRaces.map((race) => {
+              if (race === null) {
+                return (
+                  <EmptyRaceCard race={race} />
+                )
+              } else {
+                return (
+                  <RaceCard race={race} />
+                )
+              }
+            })
+          }
+        </div>);
+    })
+  )
 }

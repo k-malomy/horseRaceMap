@@ -1,0 +1,16 @@
+---
+series:
+  - name: 牡馬クラシック三冠
+    color: emerald-400
+  - name: 牝馬クラシック三冠
+    color: red-400
+  - name: 春古馬三冠
+    color: rose-300
+  - name: 秋古馬三冠
+    color: purple-300
+  - name: サマー2000
+    color: cyan-300
+  - name: サマーマイル
+    color: sky-300
+  - name: サマースプリント
+    color: blue-300
